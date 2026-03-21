@@ -12,6 +12,7 @@
   "dependencies": {
     "@left4code/svg-renderer": "^1.0.4",
     "@tailwindcss/vite": "^4.2.2",
+    "class-variance-authority": "^0.7.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tailwind-merge": "^3.5.0",
