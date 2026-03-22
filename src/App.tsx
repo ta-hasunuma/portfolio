@@ -30,13 +30,15 @@ import {
 const sectionFramePath =
 	'[{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-1-stroke)","fill":"var(--color-frame-1-fill)"},"path":[["M","15","0"],["L","100% - 0","0"],["L","100% - 0","100% - 7"],["L","0% + 0","100% - 7"],["L","0% + 0","0% + 15"],["L","15","0"]]},{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-2-stroke)","fill":"var(--color-frame-2-fill)"},"path":[["M","7","100% - 7"],["L","100% - 8","100% - 7"],["L","100% - 14","100% + 0"],["L","12","100% + 0"],["L","7","100% - 7"]]}]';
 
-function MusicPlayer({
-	isPlaying,
-	onTogglePlay,
-}: { isPlaying: boolean; onTogglePlay: () => void }) {
+function MusicPlayer() {
+	const [isPlaying, setIsPlaying] = useState(false);
 	const [isMuted, setIsMuted] = useState(false);
 	const [progress, setProgress] = useState(0);
 	const audioRef = useRef<HTMLAudioElement | null>(null);
+
+	const togglePlay = useCallback(() => {
+		setIsPlaying((prev) => !prev);
+	}, []);
 
 	useEffect(() => {
 		const audio = audioRef.current;
@@ -57,7 +59,7 @@ function MusicPlayer({
 			}
 		};
 		const handleEnded = () => {
-			onTogglePlay();
+			setIsPlaying(false);
 			setProgress(0);
 		};
 		audio.addEventListener("timeupdate", handleTimeUpdate);
@@ -66,7 +68,7 @@ function MusicPlayer({
 			audio.removeEventListener("timeupdate", handleTimeUpdate);
 			audio.removeEventListener("ended", handleEnded);
 		};
-	}, [onTogglePlay]);
+	}, []);
 
 	const toggleMute = useCallback(() => {
 		setIsMuted((prev) => {
@@ -80,19 +82,24 @@ function MusicPlayer({
 	return (
 		<div
 			className={[
-				"relative flex items-center gap-3 px-4 py-2 pb-4",
-				"[--color-frame-1-stroke:var(--color-primary)]",
-				"[--color-frame-1-fill:var(--color-primary)]/15",
-				"[--color-frame-2-stroke:var(--color-primary)]",
+				"relative flex items-center gap-3 px-4 py-2 pb-4 transition-[--color-music] duration-500",
+				"[--color-frame-1-stroke:var(--color-music)]",
+				"[--color-frame-1-fill:var(--color-music)]/15",
+				"[--color-frame-2-stroke:var(--color-music)]",
 				"[--color-frame-2-fill:transparent]",
 			].join(" ")}
+			style={{
+				"--color-music": isPlaying
+					? "rgb(20, 160, 230)"
+					: "rgb(100, 130, 160)",
+			} as React.CSSProperties}
 		>
 			<audio ref={audioRef} src="/music.mp3" preload="metadata" loop />
 			<Frame paths={JSON.parse(sectionFramePath)} />
 			<button
 				type="button"
-				onClick={onTogglePlay}
-				className="relative z-10 flex size-8 items-center justify-center rounded-full bg-primary text-background transition-all hover:drop-shadow-[0_0_10px_var(--color-primary)] cursor-pointer"
+				onClick={togglePlay}
+				className="relative z-10 flex size-8 items-center justify-center rounded-full bg-[var(--color-music)] text-background transition-all hover:drop-shadow-[0_0_10px_var(--color-music)] cursor-pointer"
 			>
 				{isPlaying ? (
 					<Pause className="size-3.5" />
@@ -107,7 +114,7 @@ function MusicPlayer({
 				</span>
 				<div className="mt-1 h-0.5 w-24 rounded bg-foreground/10">
 					<div
-						className="h-full rounded bg-primary transition-[width] duration-300"
+						className="h-full rounded bg-[var(--color-music)] transition-[width] duration-300"
 						style={{ width: `${progress * 100}%` }}
 					/>
 				</div>
@@ -115,7 +122,7 @@ function MusicPlayer({
 			<button
 				type="button"
 				onClick={toggleMute}
-				className="relative z-10 flex size-6 items-center justify-center text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+				className="relative z-10 flex size-6 items-center justify-center text-foreground/50 hover:text-[var(--color-music)] transition-colors cursor-pointer"
 			>
 				{isMuted ? (
 					<VolumeX className="size-3.5" />
@@ -175,19 +182,9 @@ function SkillCard({
 }
 
 function App() {
-	const [isPlaying, setIsPlaying] = useState(false);
-	const togglePlay = useCallback(() => {
-		setIsPlaying((prev) => !prev);
-	}, []);
-
 	return (
 		<div
-			className="flex min-h-svh flex-col mx-auto max-w-[1440px] transition-[--color-primary] duration-500"
-			style={{
-				"--color-primary": isPlaying
-					? "rgb(20, 160, 230)"
-					: "rgb(100, 130, 160)",
-			} as React.CSSProperties}
+			className="flex min-h-svh flex-col mx-auto max-w-[1440px]"
 		>
 			{/* Navigation */}
 			<nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 backdrop-blur-md bg-background/80 border-b border-foreground/5">
@@ -207,7 +204,7 @@ function App() {
 					>
 						CAREER
 					</a>
-					<MusicPlayer isPlaying={isPlaying} onTogglePlay={togglePlay} />
+					<MusicPlayer />
 				</div>
 			</nav>
 
