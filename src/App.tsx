@@ -11,7 +11,7 @@ import {
 	VolumeX,
 	Wrench,
 } from "lucide-react";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
 	AccordionContent,
 	AccordionItem,
@@ -30,21 +30,52 @@ import {
 const sectionFramePath =
 	'[{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-1-stroke)","fill":"var(--color-frame-1-fill)"},"path":[["M","15","0"],["L","100% - 0","0"],["L","100% - 0","100% - 7"],["L","0% + 0","100% - 7"],["L","0% + 0","0% + 15"],["L","15","0"]]},{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-2-stroke)","fill":"var(--color-frame-2-fill)"},"path":[["M","7","100% - 7"],["L","100% - 8","100% - 7"],["L","100% - 14","100% + 0"],["L","12","100% + 0"],["L","7","100% - 7"]]}]';
 
-function MusicPlayer() {
-	const [isPlaying, setIsPlaying] = useState(false);
+function MusicPlayer({
+	isPlaying,
+	onTogglePlay,
+}: { isPlaying: boolean; onTogglePlay: () => void }) {
 	const [isMuted, setIsMuted] = useState(false);
+	const [progress, setProgress] = useState(0);
 	const audioRef = useRef<HTMLAudioElement | null>(null);
 
-	const togglePlay = useCallback(() => {
-		setIsPlaying((prev) => !prev);
-	}, []);
+	useEffect(() => {
+		const audio = audioRef.current;
+		if (!audio) return;
+		if (isPlaying) {
+			audio.play();
+		} else {
+			audio.pause();
+		}
+	}, [isPlaying]);
+
+	useEffect(() => {
+		const audio = audioRef.current;
+		if (!audio) return;
+		const handleTimeUpdate = () => {
+			if (audio.duration) {
+				setProgress(audio.currentTime / audio.duration);
+			}
+		};
+		const handleEnded = () => {
+			onTogglePlay();
+			setProgress(0);
+		};
+		audio.addEventListener("timeupdate", handleTimeUpdate);
+		audio.addEventListener("ended", handleEnded);
+		return () => {
+			audio.removeEventListener("timeupdate", handleTimeUpdate);
+			audio.removeEventListener("ended", handleEnded);
+		};
+	}, [onTogglePlay]);
 
 	const toggleMute = useCallback(() => {
-		setIsMuted((prev) => !prev);
-		if (audioRef.current) {
-			audioRef.current.muted = !isMuted;
-		}
-	}, [isMuted]);
+		setIsMuted((prev) => {
+			if (audioRef.current) {
+				audioRef.current.muted = !prev;
+			}
+			return !prev;
+		});
+	}, []);
 
 	return (
 		<div
@@ -56,10 +87,11 @@ function MusicPlayer() {
 				"[--color-frame-2-fill:transparent]",
 			].join(" ")}
 		>
+			<audio ref={audioRef} src="/music.mp3" preload="metadata" loop />
 			<Frame paths={JSON.parse(sectionFramePath)} />
 			<button
 				type="button"
-				onClick={togglePlay}
+				onClick={onTogglePlay}
 				className="relative z-10 flex size-8 items-center justify-center rounded-full bg-primary text-background transition-all hover:drop-shadow-[0_0_10px_var(--color-primary)] cursor-pointer"
 			>
 				{isPlaying ? (
@@ -74,7 +106,10 @@ function MusicPlayer() {
 					Synthwave Ambient
 				</span>
 				<div className="mt-1 h-0.5 w-24 rounded bg-foreground/10">
-					<div className="h-full w-1/3 rounded bg-primary" />
+					<div
+						className="h-full rounded bg-primary transition-[width] duration-300"
+						style={{ width: `${progress * 100}%` }}
+					/>
 				</div>
 			</div>
 			<button
@@ -140,8 +175,20 @@ function SkillCard({
 }
 
 function App() {
+	const [isPlaying, setIsPlaying] = useState(false);
+	const togglePlay = useCallback(() => {
+		setIsPlaying((prev) => !prev);
+	}, []);
+
 	return (
-		<div className="flex min-h-svh flex-col">
+		<div
+			className="flex min-h-svh flex-col transition-[--color-primary] duration-500"
+			style={{
+				"--color-primary": isPlaying
+					? "rgb(20, 160, 230)"
+					: "rgb(100, 130, 160)",
+			} as React.CSSProperties}
+		>
 			{/* Navigation */}
 			<nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 backdrop-blur-md bg-background/80 border-b border-foreground/5">
 				<span className="text-xl font-bold tracking-[0.2em] text-primary">
@@ -166,7 +213,7 @@ function App() {
 					>
 						CAREER
 					</a>
-					<MusicPlayer />
+					<MusicPlayer isPlaying={isPlaying} onTogglePlay={togglePlay} />
 				</div>
 			</nav>
 
