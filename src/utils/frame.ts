@@ -113,6 +113,7 @@ function createSvgElement({
 	enableBackdropBlur: boolean;
 	enableViewBox: boolean;
 	clipPathId?: string;
+	clipPathInset?: number;
 }) {
 	const prevWidth = el.getAttribute("data-width");
 	const prevHeight = el.getAttribute("data-height");
@@ -151,6 +152,10 @@ function createSvgElement({
 		});
 
 		if (clipPathId && svgPaths.length > 0) {
+			const inset = clipPathInset ?? 0;
+			const scaleX = width > 0 ? (width - inset * 2) / width : 1;
+			const scaleY = height > 0 ? (height - inset * 2) / height : 1;
+
 			const clipPathElement = document.createElementNS(
 				"http://www.w3.org/2000/svg",
 				"clipPath",
@@ -161,6 +166,12 @@ function createSvgElement({
 				"path",
 			);
 			clipPath.setAttribute("d", svgPaths[0].path);
+			if (inset > 0) {
+				clipPath.setAttribute(
+					"transform",
+					`translate(${inset}, ${inset}) scale(${scaleX}, ${scaleY})`,
+				);
+			}
 			clipPathElement.appendChild(clipPath);
 			el.appendChild(clipPathElement);
 		}
@@ -206,6 +217,7 @@ function setupSvgRenderer({
 	enableBackdropBlur = false,
 	enableViewBox = false,
 	clipPathId,
+	clipPathInset,
 }: {
 	el: SVGSVGElement & {
 		render?: () => void;
@@ -214,6 +226,7 @@ function setupSvgRenderer({
 	enableBackdropBlur?: boolean;
 	enableViewBox?: boolean;
 	clipPathId?: string;
+	clipPathInset?: number;
 }) {
 	const parentElement = findRelativeParent(el) ?? el;
 	const parentWidth = () =>
@@ -233,6 +246,7 @@ function setupSvgRenderer({
 			enableBackdropBlur,
 			enableViewBox,
 			clipPathId,
+			clipPathInset,
 		});
 	};
 

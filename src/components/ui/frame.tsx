@@ -8,12 +8,14 @@ function Frame({
 	enableBackdropBlur,
 	enableViewBox,
 	clipPathId,
+	clipPathInset,
 	...props
 }: {
 	paths: Paths;
 	enableBackdropBlur?: boolean;
 	enableViewBox?: boolean;
 	clipPathId?: string;
+	clipPathInset?: number;
 } & React.ComponentProps<"svg">) {
 	const svgRef = useRef<SVGSVGElement | null>(null);
 
@@ -25,11 +27,12 @@ function Frame({
 				enableBackdropBlur,
 				enableViewBox,
 				clipPathId,
+				clipPathInset,
 			});
 
 			return () => instance.destroy();
 		}
-	}, [paths, enableBackdropBlur, enableViewBox, clipPathId]);
+	}, [paths, enableBackdropBlur, enableViewBox, clipPathId, clipPathInset]);
 
 	return (
 		<svg
