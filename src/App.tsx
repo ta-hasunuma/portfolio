@@ -182,7 +182,7 @@ function App() {
 
 	return (
 		<div
-			className="flex min-h-svh flex-col transition-[--color-primary] duration-500"
+			className="flex min-h-svh flex-col mx-auto max-w-[1440px] transition-[--color-primary] duration-500"
 			style={{
 				"--color-primary": isPlaying
 					? "rgb(20, 160, 230)"
