@@ -1,0 +1,1277 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "fFVz2",
+      "x": 0,
+      "y": 0,
+      "name": "Portfolio Page",
+      "width": 1440,
+      "fill": "#0B1622",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "986vZ",
+          "name": "Navigation",
+          "width": "fill_container",
+          "height": 80,
+          "fill": "#0B1622",
+          "padding": [
+            0,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "7adHx",
+              "name": "Logo",
+              "fill": "#14A0E6",
+              "content": "PORTFOLIO",
+              "fontFamily": "Orbitron",
+              "fontSize": 24,
+              "fontWeight": "700",
+              "letterSpacing": 4
+            },
+            {
+              "type": "frame",
+              "id": "hSC75",
+              "name": "NavLinks",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "OHnGN",
+                  "name": "nl1",
+                  "fill": "#94A3B8",
+                  "content": "ABOUT",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "EhGRH",
+                  "name": "nl2",
+                  "fill": "#94A3B8",
+                  "content": "SKILLS",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "4uc94",
+                  "name": "nl4",
+                  "fill": "#14A0E6",
+                  "content": "CAREER",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 12,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YrVNY",
+              "name": "Music Player",
+              "width": 320,
+              "height": 48,
+              "fill": "#0F172A",
+              "cornerRadius": 24,
+              "gap": 10,
+              "padding": [
+                8,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "efR4L",
+                  "name": "Play Button",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "#14A0E6",
+                  "cornerRadius": 16,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "diPBH",
+                      "name": "playIcon",
+                      "fill": "#0B1622",
+                      "content": "▶",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "P6s59",
+                  "name": "Track Info",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "oDsI1",
+                      "name": "trackTitle",
+                      "fill": "#FFFFFF",
+                      "content": "Neon Horizon",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 11,
+                      "fontWeight": "600",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "xMZuP",
+                      "name": "trackArtist",
+                      "fill": "#64748B",
+                      "content": "Synthwave Ambient",
+                      "fontFamily": "Roboto",
+                      "fontSize": 10
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ry5E1",
+                      "name": "Progress Bar BG",
+                      "width": "fill_container",
+                      "height": 2,
+                      "fill": "#1E293B",
+                      "cornerRadius": 1,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "vqAq7",
+                          "name": "Progress Fill",
+                          "width": 80,
+                          "height": 2,
+                          "fill": "#14A0E6",
+                          "cornerRadius": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kwrb1",
+                  "name": "Volume Button",
+                  "width": 28,
+                  "height": 28,
+                  "cornerRadius": 14,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ocq9C",
+                      "name": "volIcon",
+                      "fill": "#94A3B8",
+                      "content": "♪",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Rl864",
+          "name": "Hero Section",
+          "width": "fill_container",
+          "height": 700,
+          "gap": 60,
+          "padding": [
+            0,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "zraCc",
+              "name": "Hero Text",
+              "width": 600,
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QBNxz",
+                  "name": "heroTag",
+                  "fill": "#14A0E6",
+                  "content": "FULL-STACK DEVELOPER",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "PwMf6",
+                  "name": "heroName",
+                  "fill": "#FFFFFF",
+                  "content": "Hello, I'm\nHasunuma",
+                  "lineHeight": 1.2,
+                  "fontFamily": "Orbitron",
+                  "fontSize": 56,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "7GtRz",
+                  "name": "heroDesc",
+                  "fill": "#94A3B8",
+                  "content": "モダンなWeb技術を駆使して、\nユーザー体験を追求するエンジニア。\nReact / TypeScript / Node.js",
+                  "lineHeight": 1.8,
+                  "fontFamily": "Roboto",
+                  "fontSize": 18
+                },
+                {
+                  "type": "frame",
+                  "id": "C7hC3",
+                  "name": "Hero Buttons",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Dh1ix",
+                      "name": "CTA Button",
+                      "fill": "#14A0E6",
+                      "cornerRadius": 4,
+                      "gap": 8,
+                      "padding": [
+                        14,
+                        32
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "a8EJz",
+                          "name": "btnText",
+                          "fill": "#0B1622",
+                          "content": "VIEW PROJECTS",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 13,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KmUY5",
+                      "name": "Secondary Button",
+                      "cornerRadius": 4,
+                      "padding": [
+                        14,
+                        32
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Mkxwc",
+                          "name": "btnText2",
+                          "fill": "#14A0E6",
+                          "content": "CONTACT ME",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 13,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lBiZ1",
+              "name": "Hero Visual",
+              "width": 500,
+              "height": 500,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1774151303719.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 8
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1bmYF",
+          "name": "About Section",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "iGW8J",
+              "name": "Section Header",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UM6zb",
+                  "name": "aboutLabel",
+                  "fill": "#14A0E6",
+                  "content": "ABOUT ME",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "JU1F5",
+                  "name": "aboutTitle",
+                  "fill": "#FFFFFF",
+                  "content": "自己紹介",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 36,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "3WHpt",
+                  "name": "Divider",
+                  "width": 60,
+                  "height": 3,
+                  "fill": "#14A0E6",
+                  "cornerRadius": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gy9Jq",
+              "name": "About Content",
+              "width": "fill_container",
+              "gap": 60,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PBegy",
+                  "name": "About Image",
+                  "width": 400,
+                  "height": 400,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1774151330926.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 8
+                },
+                {
+                  "type": "frame",
+                  "id": "uRgnA",
+                  "name": "About Text",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ryBsx",
+                      "name": "aboutP1",
+                      "fill": "#94A3B8",
+                      "content": "Webアプリケーション開発を専門とするフルスタックエンジニアです。フロントエンドからバックエンドまで幅広い技術スタックを持ち、ユーザー中心のプロダクト開発を行っています。",
+                      "lineHeight": 1.8,
+                      "fontFamily": "Roboto",
+                      "fontSize": 16
+                    },
+                    {
+                      "type": "text",
+                      "id": "MQhnm",
+                      "name": "aboutP2",
+                      "fill": "#94A3B8",
+                      "content": "最新の技術トレンドを取り入れながら、パフォーマンスとアクセシビリティを重視した開発を心がけています。チームでの協働も大切にしており、コードレビューや技術共有を積極的に行います。",
+                      "lineHeight": 1.8,
+                      "fontFamily": "Roboto",
+                      "fontSize": 16
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hQToL",
+          "name": "Skills Section",
+          "width": "fill_container",
+          "fill": "#0F172A",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "gD5Op",
+              "name": "Section Header",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FVI0N",
+                  "name": "skillsLabel",
+                  "fill": "#14A0E6",
+                  "content": "SKILLS",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "XY6TS",
+                  "name": "skillsTitle",
+                  "fill": "#FFFFFF",
+                  "content": "技術スタック",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 36,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "492vo",
+                  "name": "Divider",
+                  "width": 60,
+                  "height": 3,
+                  "fill": "#14A0E6",
+                  "cornerRadius": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DQORt",
+              "name": "Skills Grid",
+              "width": "fill_container",
+              "gap": 32,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "LZ0fW",
+                  "name": "Skill Card Frontend",
+                  "width": 280,
+                  "fill": "#1E293B",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "fuDLM",
+                      "name": "Icon BG",
+                      "width": 56,
+                      "height": 56,
+                      "fill": "#14A0E620",
+                      "cornerRadius": 28,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "WEV0p",
+                          "name": "c1iconTxt",
+                          "fill": "#14A0E6",
+                          "content": "◇",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "O08CX",
+                      "name": "c1title",
+                      "fill": "#FFFFFF",
+                      "content": "FRONTEND",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 16,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "MJ6e9",
+                      "name": "c1desc",
+                      "fill": "#94A3B8",
+                      "content": "React / Next.js\nTypeScript\nTailwind CSS\nHTML / CSS",
+                      "lineHeight": 1.8,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "o5xkH",
+                  "name": "Skill Card Backend",
+                  "width": 280,
+                  "fill": "#1E293B",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "g4a7N",
+                      "name": "Icon BG",
+                      "width": 56,
+                      "height": 56,
+                      "fill": "#14A0E620",
+                      "cornerRadius": 28,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "I9Rzn",
+                          "name": "c2iconTxt",
+                          "fill": "#14A0E6",
+                          "content": "⬡",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "qRig3",
+                      "name": "c2title",
+                      "fill": "#FFFFFF",
+                      "content": "BACKEND",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 16,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "6YXa5",
+                      "name": "c2desc",
+                      "fill": "#94A3B8",
+                      "content": "Node.js / Express\nPython / FastAPI\nPostgreSQL\nREST API / GraphQL",
+                      "lineHeight": 1.8,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bWm0x",
+                  "name": "Skill Card DevOps",
+                  "width": 280,
+                  "fill": "#1E293B",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eLpoC",
+                      "name": "Icon BG",
+                      "width": 56,
+                      "height": 56,
+                      "fill": "#14A0E620",
+                      "cornerRadius": 28,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sf1tL",
+                          "name": "c3iconTxt",
+                          "fill": "#14A0E6",
+                          "content": "△",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "M82V5",
+                      "name": "c3title",
+                      "fill": "#FFFFFF",
+                      "content": "DEVOPS",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 16,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "VLnmS",
+                      "name": "c3desc",
+                      "fill": "#94A3B8",
+                      "content": "Docker / K8s\nGitHub Actions\nAWS / GCP\nCI/CD",
+                      "lineHeight": 1.8,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "beNI1",
+                  "name": "Skill Card Tools",
+                  "width": 280,
+                  "fill": "#1E293B",
+                  "cornerRadius": 8,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "rfIqJ",
+                      "name": "Icon BG",
+                      "width": 56,
+                      "height": 56,
+                      "fill": "#14A0E620",
+                      "cornerRadius": 28,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "6XP8T",
+                          "name": "c4iconTxt",
+                          "fill": "#14A0E6",
+                          "content": "○",
+                          "fontFamily": "Inter",
+                          "fontSize": 24,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "qd7iE",
+                      "name": "c4title",
+                      "fill": "#FFFFFF",
+                      "content": "TOOLS",
+                      "fontFamily": "Orbitron",
+                      "fontSize": 16,
+                      "fontWeight": "700",
+                      "letterSpacing": 2
+                    },
+                    {
+                      "type": "text",
+                      "id": "5jWDs",
+                      "name": "c4desc",
+                      "fill": "#94A3B8",
+                      "content": "Git / GitHub\nVS Code\nFigma / Pen\nVite / Webpack",
+                      "lineHeight": 1.8,
+                      "textAlign": "center",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WDyDG",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#0B1622",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            40,
+            80
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "nC8DC",
+              "name": "footerDivider",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#1E293B"
+            },
+            {
+              "type": "frame",
+              "id": "06aaK",
+              "name": "footerContent",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HMwDs",
+                  "name": "footerLogo",
+                  "fill": "#14A0E6",
+                  "content": "PORTFOLIO",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "frame",
+                  "id": "X5hmH",
+                  "name": "footerLinks",
+                  "gap": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yJu1Z",
+                      "name": "fl1",
+                      "fill": "#94A3B8",
+                      "content": "GitHub",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    },
+                    {
+                      "type": "text",
+                      "id": "I8fhS",
+                      "name": "fl2",
+                      "fill": "#94A3B8",
+                      "content": "Twitter",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    },
+                    {
+                      "type": "text",
+                      "id": "TbZOE",
+                      "name": "fl3",
+                      "fill": "#94A3B8",
+                      "content": "LinkedIn",
+                      "fontFamily": "Roboto",
+                      "fontSize": 14
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "bziaS",
+              "name": "footerCopy",
+              "fill": "#64748B",
+              "content": "© 2026 Hasunuma. All rights reserved.",
+              "fontFamily": "Roboto",
+              "fontSize": 12
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "12dbc",
+          "name": "Career Section",
+          "width": "fill_container",
+          "fill": "#0F172A",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": 80,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "aiPzs",
+              "name": "Section Header",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ZGroZ",
+                  "name": "crLabel",
+                  "fill": "#14A0E6",
+                  "content": "CAREER",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 14,
+                  "fontWeight": "600",
+                  "letterSpacing": 4
+                },
+                {
+                  "type": "text",
+                  "id": "dRZ5i",
+                  "name": "crTitle",
+                  "fill": "#FFFFFF",
+                  "content": "経歴",
+                  "fontFamily": "Orbitron",
+                  "fontSize": 36,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "aY0Ol",
+                  "name": "Divider",
+                  "width": 60,
+                  "height": 3,
+                  "fill": "#14A0E6",
+                  "cornerRadius": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YBkzD",
+              "name": "Timeline",
+              "width": 900,
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GVXXw",
+                  "name": "Timeline Item - High School",
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "IMLmS",
+                      "name": "Year Column",
+                      "width": 160,
+                      "layout": "vertical",
+                      "padding": [
+                        24,
+                        0
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "kixx5",
+                          "name": "year1",
+                          "fill": "#14A0E6",
+                          "content": "2019 - 2022",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 14,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "htM1c",
+                      "name": "Timeline Axis",
+                      "width": 60,
+                      "layout": "vertical",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "rRLdR",
+                          "name": "Dot",
+                          "width": 16,
+                          "height": 16,
+                          "fill": "#14A0E6",
+                          "cornerRadius": 8
+                        },
+                        {
+                          "type": "frame",
+                          "id": "d3NoE",
+                          "name": "Line",
+                          "width": 2,
+                          "height": "fill_container",
+                          "fill": "#1E293B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "0HYIX",
+                      "name": "Content",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        0,
+                        48,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "yc2s1",
+                          "name": "tag1",
+                          "fill": "#14A0E620",
+                          "cornerRadius": 4,
+                          "padding": [
+                            4,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xfVZn",
+                              "name": "tag1t",
+                              "fill": "#14A0E6",
+                              "content": "高等学校",
+                              "fontFamily": "Roboto",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "ksFi8",
+                          "name": "title1",
+                          "fill": "#FFFFFF",
+                          "content": "○○高等学校 理数科",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 20,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "BJTAk",
+                          "name": "desc1",
+                          "fill": "#94A3B8",
+                          "content": "理数科に在籍し、プログラミングと数学を中心に学習。\n情報技術の基礎を習得し、課題研究ではWebアプリケーションの開発に取り組む。\n文化祭でのデジタル作品展示や、プログラミングコンテストへの参加を通じて実践力を養う。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Roboto",
+                          "fontSize": 15
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "oXBaT",
+                  "name": "Timeline Item - University",
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "u2qC0",
+                      "name": "Year Column",
+                      "width": 160,
+                      "layout": "vertical",
+                      "padding": [
+                        24,
+                        0
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "hnue0",
+                          "name": "year2",
+                          "fill": "#14A0E6",
+                          "content": "2022 - 2026",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 14,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4gDcw",
+                      "name": "Timeline Axis",
+                      "width": 60,
+                      "layout": "vertical",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "5RYTQ",
+                          "name": "Dot",
+                          "width": 16,
+                          "height": 16,
+                          "fill": "#14A0E6",
+                          "cornerRadius": 8
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LJ46p",
+                          "name": "Line",
+                          "width": 2,
+                          "height": "fill_container",
+                          "fill": "#1E293B"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Of43a",
+                      "name": "Content",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        0,
+                        48,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "EsDsU",
+                          "name": "tag2",
+                          "fill": "#14A0E620",
+                          "cornerRadius": 4,
+                          "padding": [
+                            4,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AOgcz",
+                              "name": "tag2t",
+                              "fill": "#14A0E6",
+                              "content": "大学",
+                              "fontFamily": "Roboto",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "S8SFT",
+                          "name": "title2",
+                          "fill": "#FFFFFF",
+                          "content": "○○大学 情報工学部",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 20,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "Bv2X1",
+                          "name": "desc2",
+                          "fill": "#94A3B8",
+                          "content": "情報工学を専攻し、ソフトウェア工学・機械学習・データベース設計を深く学ぶ。\n研究室ではWebパフォーマンス最適化に関する研究に従事。\nハッカソンやOSSコントリビューションを通じて、チーム開発の経験を積む。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Roboto",
+                          "fontSize": 15
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TxVQz",
+                  "name": "Timeline Item - Company",
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "k8UwU",
+                      "name": "Year Column",
+                      "width": 160,
+                      "layout": "vertical",
+                      "padding": [
+                        24,
+                        0
+                      ],
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pVqQ7",
+                          "name": "year3",
+                          "fill": "#14A0E6",
+                          "content": "2026 -",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 14,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kOYyw",
+                          "name": "nowTag",
+                          "fill": "#14A0E6",
+                          "cornerRadius": 4,
+                          "padding": [
+                            2,
+                            8
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "nYj8y",
+                              "name": "nowText",
+                              "fill": "#0B1622",
+                              "content": "NOW",
+                              "fontFamily": "Orbitron",
+                              "fontSize": 10,
+                              "fontWeight": "700",
+                              "letterSpacing": 1
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "bpXeA",
+                      "name": "Timeline Axis",
+                      "width": 60,
+                      "layout": "vertical",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Btwqg",
+                          "name": "Dot Active",
+                          "width": 20,
+                          "height": 20,
+                          "fill": "#14A0E6",
+                          "cornerRadius": 10,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "N2rqk",
+                              "name": "dotInner",
+                              "width": 8,
+                              "height": 8,
+                              "fill": "#0F172A",
+                              "cornerRadius": 4
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "sTwCJ",
+                      "name": "Content",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": [
+                        0,
+                        0,
+                        24,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Ey7QG",
+                          "name": "tag3",
+                          "fill": "#CA412220",
+                          "cornerRadius": 4,
+                          "padding": [
+                            4,
+                            12
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "DGhrh",
+                              "name": "tag3t",
+                              "fill": "#CA4122",
+                              "content": "現職",
+                              "fontFamily": "Roboto",
+                              "fontSize": 12,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "NCIEB",
+                          "name": "title3",
+                          "fill": "#FFFFFF",
+                          "content": "○○株式会社 エンジニア",
+                          "fontFamily": "Orbitron",
+                          "fontSize": 20,
+                          "fontWeight": "700",
+                          "letterSpacing": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "j1tdR",
+                          "name": "desc3",
+                          "fill": "#94A3B8",
+                          "content": "新卒入社し、Webアプリケーション開発チームに所属。\nReact / TypeScript を用いたフロントエンド開発と、Node.js によるAPI設計・実装を担当。\nアジャイル開発プロセスの中で、コードレビューやCI/CD整備にも積極的に取り組んでいる。",
+                          "lineHeight": 1.8,
+                          "fontFamily": "Roboto",
+                          "fontSize": 15
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
