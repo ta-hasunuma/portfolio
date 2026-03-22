@@ -196,12 +196,6 @@ function App() {
 				</span>
 				<div className="flex items-center gap-6">
 					<a
-						href="#about"
-						className="text-xs tracking-widest text-foreground/60 hover:text-primary transition-colors"
-					>
-						ABOUT
-					</a>
-					<a
 						href="#skills"
 						className="text-xs tracking-widest text-foreground/60 hover:text-primary transition-colors"
 					>
@@ -262,41 +256,6 @@ function App() {
 						className="absolute inset-0 z-10 h-full w-full object-cover"
 						style={{ clipPath: "url(#hero-clip)" }}
 					/>
-				</div>
-			</section>
-
-			{/* About Section */}
-			<section
-				id="about"
-				className="flex flex-col items-center gap-12 px-16 py-24"
-			>
-				<SectionHeader label="ABOUT ME" title="自己紹介" />
-				<div className="flex max-w-4xl flex-col gap-6 font-roboto text-base leading-loose text-foreground/70 lg:flex-row lg:gap-12">
-					<div
-						className={[
-							"relative hidden w-[320px] h-[320px] shrink-0 lg:block",
-							"[--color-frame-1-stroke:var(--color-primary)]",
-							"[--color-frame-1-fill:var(--color-primary)]/10",
-							"[--color-frame-2-stroke:var(--color-primary)]",
-							"[--color-frame-2-fill:transparent]",
-						].join(" ")}
-					>
-						<Frame paths={JSON.parse(sectionFramePath)} clipPathId="about-clip" clipPathInset={12} />
-						<img
-							src="/image.png"
-							alt="自己紹介"
-							className="absolute inset-0 z-10 h-full w-full object-cover"
-							style={{ clipPath: "url(#about-clip)" }}
-						/>
-					</div>
-					<div className="flex flex-col gap-4">
-						<p>
-							Webアプリケーション開発を専門とするフルスタックエンジニアです。フロントエンドからバックエンドまで幅広い技術スタックを持ち、ユーザー中心のプロダクト開発を行っています。
-						</p>
-						<p>
-							最新の技術トレンドを取り入れながら、パフォーマンスとアクセシビリティを重視した開発を心がけています。チームでの協働も大切にしており、コードレビューや技術共有を積極的に行います。
-						</p>
-					</div>
 				</div>
 			</section>
 
