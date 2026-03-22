@@ -1,31 +1,31 @@
-import { useState, useRef, useCallback } from "react";
+import {
+	Building2,
+	Code,
+	Container,
+	GraduationCap,
+	Pause,
+	Play,
+	School,
+	Server,
+	Volume2,
+	VolumeX,
+	Wrench,
+} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import {
+	AccordionContent,
+	AccordionItem,
+	AccordionRoot,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Frame } from "@/components/ui/frame";
 import {
-	AccordionRoot,
-	AccordionItem,
-	AccordionTrigger,
-	AccordionContent,
-} from "@/components/ui/accordion";
-import {
-	TabsRoot,
-	TabsList,
-	TabsTrigger,
 	TabsContent,
+	TabsList,
+	TabsRoot,
+	TabsTrigger,
 } from "@/components/ui/tabs";
-import {
-	Play,
-	Pause,
-	Volume2,
-	VolumeX,
-	Code,
-	Server,
-	Container,
-	Wrench,
-	GraduationCap,
-	Building2,
-	School,
-} from "lucide-react";
 
 const sectionFramePath =
 	'[{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-1-stroke)","fill":"var(--color-frame-1-fill)"},"path":[["M","15","0"],["L","100% - 0","0"],["L","100% - 0","100% - 7"],["L","0% + 0","100% - 7"],["L","0% + 0","0% + 15"],["L","15","0"]]},{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-2-stroke)","fill":"var(--color-frame-2-fill)"},"path":[["M","7","100% - 7"],["L","100% - 8","100% - 7"],["L","100% - 14","100% + 0"],["L","12","100% + 0"],["L","7","100% - 7"]]}]';
@@ -69,9 +69,7 @@ function MusicPlayer() {
 				)}
 			</button>
 			<div className="relative z-10 flex flex-col gap-0.5">
-				<span className="text-xs font-bold tracking-widest">
-					Neon Horizon
-				</span>
+				<span className="text-xs font-bold tracking-widest">Neon Horizon</span>
 				<span className="text-xs font-roboto text-foreground/50">
 					Synthwave Ambient
 				</span>
@@ -94,13 +92,7 @@ function MusicPlayer() {
 	);
 }
 
-function SectionHeader({
-	label,
-	title,
-}: {
-	label: string;
-	title: string;
-}) {
+function SectionHeader({ label, title }: { label: string; title: string }) {
 	return (
 		<div className="flex flex-col items-center gap-3">
 			<span className="text-xs font-bold tracking-[0.25em] text-primary">
@@ -211,16 +203,17 @@ function App() {
 					].join(" ")}
 				>
 					<Frame
+						clipPathId="hero-clip"
 						paths={JSON.parse(
 							'[{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-1-stroke)","fill":"var(--color-frame-1-fill)"},"path":[["M","19","0"],["L","100% - 18","0"],["L","100% + 0","0% + 18.5"],["L","100% + 0","50% - 21.119592875318066%"],["L","100% - 8","50% - 19.338422391857506%"],["L","100% - 8","50% + 17.557251908396946%"],["L","100% + 0","100% - 30.15267175572519%"],["L","100% + 0","100% - 22.5"],["L","100% - 17","100% - 7.5"],["L","50% + 17.16417910447761%","100% - 7.5"],["L","50% + 15.298507462686567%","100% - 15.5"],["L","50% - 14.552238805970148%","100% - 15.5"],["L","50% - 16.417910447761194%","100% - 6.5"],["L","0% + 17","100% - 7.5"],["L","0% + 0","100% - 24.5"],["L","0% + 0","50% + 19.84732824427481%"],["L","0% + 9","50% + 17.557251908396946%"],["L","0% + 10","50% - 18.829516539440203%"],["L","0","50% - 21.62849872773537%"],["L","0","0% + 19.5"],["L","19","0"]]},{"show":true,"style":{"strokeWidth":"1","stroke":"var(--color-frame-2-stroke)","fill":"var(--color-frame-2-fill)"},"path":[["M","28","100% - 7.000000000000057"],["L","50% - 16.417910447761194%","100% - 7"],["L","50% - 14.552238805970148%","100% - 15.5"],["L","50% + 15.298507462686567%","100% - 15.5"],["L","50% + 17.16417910447761%","100% - 7.5"],["L","100% - 26","100% - 7.5"],["L","100% - 33","100% + 0"],["L","50% + 16.23134328358209%","100% - 1.1368683772161605"],["L","50% + 14.552238805970148%","100% - 8"],["L","50% - 13.619402985074627%","100% - 8"],["L","50% - 15.111940298507463%","100% + 0"],["L","33","100% + 0"],["L","28","100% - 7"]]}]',
 						)}
 					/>
-					<div className="relative z-10 flex h-full flex-col items-center justify-center gap-4 text-primary/40">
-						<Code className="size-16" />
-						<span className="text-xs tracking-[0.3em]">
-							CREATIVE ENGINEERING
-						</span>
-					</div>
+					<img
+						src="/image.png"
+						alt="Hasunuma"
+						className="absolute inset-0 z-10 h-full w-full object-cover"
+						style={{ clipPath: "url(#hero-clip)" }}
+					/>
 				</div>
 			</section>
 
@@ -240,10 +233,13 @@ function App() {
 							"[--color-frame-2-fill:transparent]",
 						].join(" ")}
 					>
-						<Frame paths={JSON.parse(sectionFramePath)} />
-						<div className="relative z-10 flex h-full items-center justify-center text-primary/30">
-							<Server className="size-12" />
-						</div>
+						<Frame paths={JSON.parse(sectionFramePath)} clipPathId="about-clip" />
+						<img
+							src="/image.png"
+							alt="自己紹介"
+							className="absolute inset-0 z-10 h-full w-full object-cover"
+							style={{ clipPath: "url(#about-clip)" }}
+						/>
 					</div>
 					<div className="flex flex-col gap-4">
 						<p>
@@ -262,10 +258,7 @@ function App() {
 				className="flex flex-col items-center gap-12 px-16 py-24"
 			>
 				<SectionHeader label="SKILLS" title="技術スタック" />
-				<TabsRoot
-					defaultValue="overview"
-					className="w-full max-w-5xl"
-				>
+				<TabsRoot defaultValue="overview" className="w-full max-w-5xl">
 					<TabsList>
 						<TabsTrigger value="overview">OVERVIEW</TabsTrigger>
 						<TabsTrigger value="frontend">FRONTEND</TabsTrigger>
@@ -307,12 +300,7 @@ function App() {
 							<SkillCard
 								icon={Wrench}
 								title="TOOLS"
-								skills={[
-									"Git / GitHub",
-									"VS Code",
-									"Figma",
-									"Vite / Webpack",
-								]}
+								skills={["Git / GitHub", "VS Code", "Figma", "Vite / Webpack"]}
 							/>
 						</div>
 					</TabsContent>
@@ -332,9 +320,7 @@ function App() {
 					</TabsContent>
 					<TabsContent value="backend">
 						<div className="flex flex-col gap-3 font-roboto text-foreground/80">
-							<p>
-								サーバーサイド開発とデータベース設計を担当しています。
-							</p>
+							<p>サーバーサイド開発とデータベース設計を担当しています。</p>
 							<ul className="list-inside list-disc space-y-1 text-foreground/60">
 								<li>Node.js / Express による REST API 設計・実装</li>
 								<li>Python / FastAPI による高速APIサーバー構築</li>
@@ -346,9 +332,7 @@ function App() {
 					</TabsContent>
 					<TabsContent value="devops">
 						<div className="flex flex-col gap-3 font-roboto text-foreground/80">
-							<p>
-								インフラ構築とCI/CDパイプラインの整備を行っています。
-							</p>
+							<p>インフラ構築とCI/CDパイプラインの整備を行っています。</p>
 							<ul className="list-inside list-disc space-y-1 text-foreground/60">
 								<li>Docker によるコンテナ化とKubernetes運用</li>
 								<li>GitHub Actions でのCI/CDパイプライン構築</li>
@@ -367,25 +351,18 @@ function App() {
 				className="flex flex-col items-center gap-12 px-16 py-24"
 			>
 				<SectionHeader label="CAREER" title="経歴" />
-				<AccordionRoot
-					defaultValue={["company"]}
-					className="w-full max-w-3xl"
-				>
+				<AccordionRoot defaultValue={["company"]} className="w-full max-w-3xl">
 					<AccordionItem value="highschool">
 						<AccordionTrigger>
 							<School className="size-4 me-2 text-primary" />
-							<span className="flex-1 text-left">
-								○○高等学校 理数科
-							</span>
+							<span className="flex-1 text-left">○○高等学校 理数科</span>
 							<span className="ms-auto me-4 text-xs text-primary/70 font-normal">
 								2019 - 2022
 							</span>
 						</AccordionTrigger>
 						<AccordionContent>
 							<div className="font-roboto text-sm leading-relaxed">
-								<p>
-									理数科に在籍し、プログラミングと数学を中心に学習。
-								</p>
+								<p>理数科に在籍し、プログラミングと数学を中心に学習。</p>
 								<p className="mt-2">
 									情報技術の基礎を習得し、課題研究ではWebアプリケーションの開発に取り組む。文化祭でのデジタル作品展示や、プログラミングコンテストへの参加を通じて実践力を養う。
 								</p>
@@ -396,9 +373,7 @@ function App() {
 					<AccordionItem value="university">
 						<AccordionTrigger>
 							<GraduationCap className="size-4 me-2 text-primary" />
-							<span className="flex-1 text-left">
-								○○大学 情報工学部
-							</span>
+							<span className="flex-1 text-left">○○大学 情報工学部</span>
 							<span className="ms-auto me-4 text-xs text-primary/70 font-normal">
 								2022 - 2026
 							</span>
@@ -418,9 +393,7 @@ function App() {
 					<AccordionItem value="company">
 						<AccordionTrigger>
 							<Building2 className="size-4 me-2 text-accent" />
-							<span className="flex-1 text-left">
-								○○株式会社 エンジニア
-							</span>
+							<span className="flex-1 text-left">○○株式会社 エンジニア</span>
 							<span className="ms-auto me-4 flex items-center gap-2">
 								<span className="text-xs text-primary/70 font-normal">
 									2026 -
@@ -432,12 +405,9 @@ function App() {
 						</AccordionTrigger>
 						<AccordionContent>
 							<div className="font-roboto text-sm leading-relaxed">
-								<p>
-									新卒入社し、Webアプリケーション開発チームに所属。
-								</p>
+								<p>新卒入社し、Webアプリケーション開発チームに所属。</p>
 								<p className="mt-2">
-									React / TypeScript
-									を用いたフロントエンド開発と、Node.js
+									React / TypeScript を用いたフロントエンド開発と、Node.js
 									によるAPI設計・実装を担当。アジャイル開発プロセスの中で、コードレビューやCI/CD整備にも積極的に取り組んでいる。
 								</p>
 							</div>
@@ -453,24 +423,15 @@ function App() {
 						PORTFOLIO
 					</span>
 					<div className="flex gap-8 font-roboto text-sm text-foreground/50">
-						<a
-							href="#"
-							className="hover:text-primary transition-colors"
-						>
+						<p className="hover:text-primary transition-colors">
 							GitHub
-						</a>
-						<a
-							href="#"
-							className="hover:text-primary transition-colors"
-						>
+						</p>
+						<p className="hover:text-primary transition-colors">
 							Twitter
-						</a>
-						<a
-							href="#"
-							className="hover:text-primary transition-colors"
-						>
+						</p>
+						<p className="hover:text-primary transition-colors">
 							LinkedIn
-						</a>
+						</p>
 					</div>
 				</div>
 				<span className="text-xs font-roboto text-foreground/30">

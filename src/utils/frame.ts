@@ -104,6 +104,7 @@ function createSvgElement({
 	height,
 	enableBackdropBlur,
 	enableViewBox,
+	clipPathId,
 }: {
 	el: SVGSVGElement;
 	paths: Paths;
@@ -111,6 +112,7 @@ function createSvgElement({
 	height: number;
 	enableBackdropBlur: boolean;
 	enableViewBox: boolean;
+	clipPathId?: string;
 }) {
 	const prevWidth = el.getAttribute("data-width");
 	const prevHeight = el.getAttribute("data-height");
@@ -120,16 +122,19 @@ function createSvgElement({
 		el.setAttribute("data-height", height.toString());
 
 		el.querySelectorAll("path").forEach((path) => path.remove());
+		el.querySelectorAll("clipPath").forEach((cp) => cp.remove());
 
 		if (enableViewBox) {
 			el.setAttribute("viewBox", `0 0 ${width} ${height}`);
 		}
 
-		createSvgPaths({
+		const svgPaths = createSvgPaths({
 			paths,
 			width,
 			height,
-		}).map((p) => {
+		});
+
+		svgPaths.map((p) => {
 			const pathElement = document.createElementNS(
 				"http://www.w3.org/2000/svg",
 				"path",
@@ -144,6 +149,21 @@ function createSvgElement({
 
 			el?.appendChild(pathElement);
 		});
+
+		if (clipPathId && svgPaths.length > 0) {
+			const clipPathElement = document.createElementNS(
+				"http://www.w3.org/2000/svg",
+				"clipPath",
+			);
+			clipPathElement.setAttribute("id", clipPathId);
+			const clipPath = document.createElementNS(
+				"http://www.w3.org/2000/svg",
+				"path",
+			);
+			clipPath.setAttribute("d", svgPaths[0].path);
+			clipPathElement.appendChild(clipPath);
+			el.appendChild(clipPathElement);
+		}
 
 		if (enableBackdropBlur) {
 			const serializer = new XMLSerializer();
@@ -185,6 +205,7 @@ function setupSvgRenderer({
 	paths,
 	enableBackdropBlur = false,
 	enableViewBox = false,
+	clipPathId,
 }: {
 	el: SVGSVGElement & {
 		render?: () => void;
@@ -192,6 +213,7 @@ function setupSvgRenderer({
 	paths: Paths;
 	enableBackdropBlur?: boolean;
 	enableViewBox?: boolean;
+	clipPathId?: string;
 }) {
 	const parentElement = findRelativeParent(el) ?? el;
 	const parentWidth = () =>
@@ -210,6 +232,7 @@ function setupSvgRenderer({
 			height,
 			enableBackdropBlur,
 			enableViewBox,
+			clipPathId,
 		});
 	};
 

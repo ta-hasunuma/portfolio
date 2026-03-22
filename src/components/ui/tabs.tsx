@@ -1,7 +1,7 @@
+import { Tabs } from "@ark-ui/react/tabs";
 import { twMerge } from "tailwind-merge";
 import { Button } from "@/components/ui/button";
 import { Frame } from "@/components/ui/frame";
-import { Tabs } from "@ark-ui/react/tabs";
 
 function TabsRoot({
 	children,
@@ -91,4 +91,4 @@ function TabsContent({
 	);
 }
 
-export { TabsRoot, TabsList, TabsTrigger, TabsContent };
+export { TabsContent, TabsList, TabsRoot, TabsTrigger };

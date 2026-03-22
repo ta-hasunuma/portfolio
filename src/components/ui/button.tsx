@@ -1,6 +1,6 @@
-import { Frame } from "@/components/ui/frame";
-import { twMerge } from "tailwind-merge";
 import { cva, type VariantProps } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
+import { Frame } from "@/components/ui/frame";
 
 const buttonVariants = cva(
 	[
@@ -76,10 +76,10 @@ function Button({
 						)}
 					/>
 				)}
-				{customPaths?.map((customPath, i) => {
+				{customPaths?.map((customPath) => {
 					return (
 						<Frame
-							key={i}
+							key={customPath}
 							enableBackdropBlur={enableBackdropBlur}
 							enableViewBox={enableViewBox}
 							paths={JSON.parse(customPath)}
